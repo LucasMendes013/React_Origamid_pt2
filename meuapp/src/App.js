@@ -1,16 +1,34 @@
 import React from 'react';
-import Modal from './Modal';
-import ButtonModal from './ButtonModal';
+
 
 const App = () => {
-  const [modal, setModal] = React.useState(false);
+  let [tablet, useTablet] = React.useState(false)
+
+  const displayNone = {
+    display : 'none',
+  }
+
+  function ClickTablet () {
+    useTablet(!tablet)
+  }
+
+  function linkTablet () {
+    document.write('https://ranekapi.origamid.dev/json/api/produto/tablet')
+    if (tablet === true) {
+      document.querySelector('.classebutton')
+    } else {
+
+    }
+  }
+
 
   return (
-    <div>
-      <Modal modal={modal} setModal={setModal} />
-      <ButtonModal setModal={setModal} />
-    </div>
-  );
-};
+    <>
+    <button className="classebutton" onClick={ClickTablet}>{!tablet ? linkTablet() : 'false'}</button>
+    </>
+  )
+}
+
+
 
 export default App;

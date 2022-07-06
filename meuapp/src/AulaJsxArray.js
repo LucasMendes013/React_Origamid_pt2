@@ -1,7 +1,9 @@
+import React from "react";
+
 //JSX Arrays
 //O JSX irá listar cada um dos itens da array. Ele não irá separar ou colocar vírgula, é você que deve modificar a array para o resultado desejado
 
-const App = () => {
+const App22 = () => {
   const produtos = ['Notebook', 'Smartphone', 'Tablet'];
 
   return <p>{produtos}</p>;
@@ -10,7 +12,7 @@ const App = () => {
 
 //Keys
 //O JSX necessita de uma key única para cada elemento da Array. 
-const App = () => {
+const App33 = () => {
   const empresas = [<li key="e1">Apple</li>, <li key="e2">Google</li>];
 
   return <ul>{empresas}</ul>;
@@ -21,7 +23,7 @@ const App = () => {
 //É comum usarmos o map direto na array como uma expressão, retornando um elemento para cada item novo da Array.
 //Map pode ser usado como um laço de repetição para Arrays, faz determinada ação estipulada para cada um dos itens.
 
-const App = () => {
+const App4 = () => {
   const filmes = ['Before Sunrise', 'Before Sunset', 'Before Midnight'];
 
   return (
@@ -37,7 +39,7 @@ const App = () => {
 //O cenário mais comum é trabalhar com array's de objetos.
 //O Método filter pode cria um novo array com todos os elementos que passaram no teste implementado pela função fornecida.
 
-const App = () => {
+const App5 = () => {
   const livros = [
     { nome: 'A Game of Thrones', ano: 1996 },
     { nome: 'A Clash of Kings', ano: 1998 },
@@ -100,8 +102,8 @@ console.log(a,f) //acerola, figo
 
 //usando o operador rest ... tem o significado de retornar o restante
 const fruits3 = ['banana', 'acerola', 'figo']
-const [a, ..rest] = fruits
-console.log(a,f) //banana, acerola figo
+const [ acc, ...rest] = fruits
+console.log(acc,f) //banana, acerola figo
 
 
 
@@ -110,7 +112,7 @@ console.log(a,f) //banana, acerola figo
 //Eventos
 // Podemos atribuir eventos diretamente aos elementos JSX como um atributo. Os eventos são sintáticos, ou seja, são criados pelo próprio React porém seguindo as especificações da W3C (e funcionam igualmente nos diversos browsers que o React suporta).
 
-const App = () => {
+const App6 = () => {
   function handleClick(event) {
     alert('Comprou: ' + event.target.innerText);
   }
@@ -131,7 +133,7 @@ const Titulo = (props) => {
   return <h1>{props.texto}</h1>;
 };
 
-const App = () => {
+const App7 = () => {
   return (
     <section>
       <Titulo texto="Meu Primeiro Título" />
@@ -143,11 +145,11 @@ const App = () => {
 //Múltiplas Propriedades
 //Podemos passar quantas propriedades quisermos
 
-const Titulo = (props) => {
+const Titulo33 = (props) => {
   return <h1 style={{ color: props.cor }}>{props.texto}</h1>;
 };
 
-const App = () => {
+const App8 = () => {
   return (
     <section>
       <Titulo texto="Meu Primeiro Título" cor="blue" />
@@ -160,7 +162,7 @@ const App = () => {
 //Estado
 //  O estado de uma aplicação representa as características dela naquele momento. Por exemplo: os dados do usuário foram carregados, o botão está ativo, o usuário está na página de contato e etc.
 
-const App = () => {
+const Ap123p = () => {
   const ativo = true;
 
   return (
@@ -171,7 +173,7 @@ const App = () => {
 
 //Hooks
 //Os Hooks são funções especiais do React que permitem controlarmos o estado e o ciclo de vida de componentes funcionais. Isso antes só era possível com classes.
-const App = () => {
+const App444 = () => {
   const [ativo, setAtivo] = React.useState(true);
 
   return (
@@ -186,7 +188,7 @@ const App = () => {
 
 //Quando a função de modificação do estado é ativada, todos os componentes que dependerem do estado, serão renderizados novamente e os seus filhos também. É isso que garante a reatividade de componentes funcionais no React.
 
-const App = () => {
+const App666 = () => {
   const [ativo, setAtivo] = React.useState(true);
   // É a mesma coisa que:
   // const ativoArray = React.useState(true);
@@ -202,7 +204,7 @@ const App = () => {
 
 //Múltiplos Estados
 //Não existem limites para o uso do useState, podemos definir diversos no mesmo componente.
-const App = () => {
+const App5432 = () => {
   const [contar, setContar] = React.useState(0);
   const [ativo, setAtivo] = React.useState(false);
   const [dados, setDados] = React.useState({ nome: '', idade: '' });
@@ -213,22 +215,22 @@ const App = () => {
 
 //Props
 //Podemos passar o estado e a função de modificação como propriedades para outros elementos.
-import React from 'react';
-import Modal from './Modal';
-import ButtonModal from './ButtonModal';
+// import React from 'react';
+// import Modal from './Modal';
+// import ButtonModal from './ButtonModal';
 
-const App = () => {
-  const [modal, setModal] = React.useState(false);
+// const App999 = () => {
+//   const [modal, setModal] = React.useState(false);
 
-  return (
-    <div>
-      <Modal modal={modal} setModal={setModal} />
-      <ButtonModal setModal={setModal} />
-    </div>
-  );
-};
+//   return (
+//     <div>
+//       <Modal modal={modal} setModal={setModal} />
+//       <ButtonModal setModal={setModal} />
+//     </div>
+//   );
+// };
 
-export default App;
+// export default App;
 
 //Reatividade
 //Não modifique o estado diretamente. Utilize sempre a função de atualização do estado, pois ela que garante a reatividade dos componentes.
@@ -261,7 +263,7 @@ const App = () => {
 //Callback
 //Podemos passar uma função de callback para atualizar o estado. A função de callback recebe um parâmetro que representa o valor anterior e irá modificar o estado para o valor que for retonado na função.
 
-const App = () => {
+const App3 = () => {
   const [ativo, setAtivo] = React.useState(true);
 
   function handleClick() {
@@ -273,6 +275,34 @@ const App = () => {
     <button onClick={handleClick}>
       {ativo ? 'Está Ativo' : 'Está Inativo'}
     </button>
+  );
+};
+
+
+//React.StrictMode
+//O modo estrito invoca duas vezes a renderização do componente, quando o estado é atualizado. Assim é possível identificarmos funções com efeitos coláterais (side effects) e eliminarmos as mesmas.
+//Funções com efeitos coláterais são aquelas que modificam estados que estão fora das mesmas.
+const Contador = () => {
+  const [contar, setContar] = React.useState(1);
+  const [items, setItems] = React.useState(['Item 1']);
+
+  function handleClick() {
+    setContar((contar) => {
+      // setContar possui um efeito colateral.
+      setItems((items) => [...items, 'Item ' + (contar + 1)]);
+      return contar + 1;
+    });
+    // Tirar o efeito de dentro do setContar irá concertar o erro
+    // setItems((items) => [...items, 'Item ' + (contar + 1)]);
+  }
+
+  return (
+    <>
+      {items.map((item) => (
+        <li key={item}>{item}</li>
+      ))}
+      <button onClick={handleClick}>{contar}</button>
+    </>
   );
 };
 
