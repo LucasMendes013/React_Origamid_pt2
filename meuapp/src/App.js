@@ -1,27 +1,16 @@
-import React from 'react'
-
-
-
+import React from 'react';
+import Modal from './Modal';
+import ButtonModal from './ButtonModal';
 
 const App = () => {
-  const livros = [
-    { nome: 'A Game of Thrones', ano: 1996 },
-    { nome: 'A Clash of Kings', ano: 1998 },
-    { nome: 'A Storm of Swords', ano: 2000 },
-  ];
+  const [modal, setModal] = React.useState(false);
 
   return (
-    <ul>
-      {livros
-        .filter((livro) => livro.ano >= 1998)
-        .map((livro) => (
-          <li key={livro.nome}>
-            {livro.nome}, {livro.ano}
-          </li>
-        ))}
-    </ul>
+    <div>
+      <Modal modal={modal} setModal={setModal} />
+      <ButtonModal setModal={setModal} />
+    </div>
   );
 };
-
 
 export default App;
