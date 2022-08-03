@@ -2,30 +2,23 @@ import React from 'react';
 
 
 const App = () => {
-  let [tablet, useTablet] = React.useState(false)
+const [ativo, setAtivo] = React.useState(false)
 
-  const displayNone = {
-    display : 'none',
+function handleClick(){
+  setAtivo(!ativo)
+}
+
+const resultadoAtivo = function ( ){
+  const img = https://i.pinimg.com/originals/72/57/a2/7257a2f13713822b2ea934d4d7697c53.png
+  if (ativo === true) {
+    <img src={img} ></img>
   }
-
-  function ClickTablet () {
-    useTablet(!tablet)
-  }
-
-  function linkTablet () {
-    document.write('https://ranekapi.origamid.dev/json/api/produto/tablet')
-    if (tablet === true) {
-      document.querySelector('.classebutton')
-    } else {
-
-    }
-  }
-
+}
 
   return (
-    <>
-    <button className="classebutton" onClick={ClickTablet}>{!tablet ? linkTablet() : 'false'}</button>
-    </>
+
+    <button onClick={handleClick}>{ativo ? 'Ativo' : 'Inativo'}</button>
+
   )
 }
 
